@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #222222;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2f6f61;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #a7dcd9;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main layout for index.html */
+main {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: auto auto;
+
+    gap: 25px;
+
+    width: 100%;
+
+    max-width: 2200px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    flex: 1;
+}
+
+.about-main {
+    
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto auto;
+
+    max-width: 1000px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #2f6f61;
+}
+
+.hello-section {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.image-section {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.information-section {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.demonstrates-section {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+/* List styling */
+ul {
+    line-height: 1.8;
+}
+
+
+/* Image styling */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 6px;
+}
+
+
+/* Links inside main content */
+main a {
+    color: #2f6f61;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #a7dcd9;
+}
+
+
+/* Footer */
+footer {
+    background-color: #2f6f61;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* Mobile layout */
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        width: 100%;
+
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .about-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        width: 100%;
+    }
+
+    .hello-section,
+    .image-section,
+    .information-section,
+    .demonstrates-section {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
