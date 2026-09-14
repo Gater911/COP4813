@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="Confirmation page for Brendan J. Mejia's COP4813 Assignment 3 HTML5 and JavaScript form.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Confirm Form Information | COP4813 Assignment 3</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <script src="../JS/assignment3_confirmation.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 3 - Confirm Your Information</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main form-main">
+
+            <section>
+
+                <p class="project-type">Review Before Sending</p>
+
+                <h2>Confirm Your Information</h2>
+
+                <p>Please review the information below. If anything is incorrect, return to the form and make changes.</p>
+
+                <div id="confirmation-status" class="form-errors" role="alert" aria-live="polite" hidden></div>
+
+                <dl id="confirmation-details" class="confirmation-details" hidden>
+
+                    <div><dt>Name</dt><dd id="confirm-name"></dd></div>
+
+                    <div><dt>Address</dt><dd id="confirm-address"></dd></div>
+
+                    <div><dt>Phone</dt><dd id="confirm-phone"></dd></div>
+
+                    <div><dt>Email</dt><dd id="confirm-email"></dd></div>
+
+                    <div><dt>Birth Date</dt><dd id="confirm-birthdate"></dd></div>
+
+                    <div><dt>Message</dt><dd id="confirm-message" class="message-output"></dd></div>
+
+                </dl>
+
+                <form id="confirmation-email-form" action="mailto:Brendan_Mejia@ProtonMail.com" method="post" enctype="text/plain" hidden>
+
+                    <input type="hidden" name="firstname" id="email-firstname">
+
+                    <input type="hidden" name="lastname" id="email-lastname">
+
+                    <input type="hidden" name="address" id="email-address">
+
+                    <input type="hidden" name="city" id="email-city">
+
+                    <input type="hidden" name="state" id="email-state">
+
+                    <input type="hidden" name="zip" id="email-zip">
+                    
+                    <input type="hidden" name="phone" id="email-phone">
+                    
+                    <input type="hidden" name="email" id="email-email">
+                    
+                    <input type="hidden" name="birthdate" id="email-birthdate">
+                    
+                    <input type="hidden" name="message" id="email-message">
+
+                    <div class="form-actions">
+
+                        <a class="secondary-button button-as-link" href="assignment3.html">Edit Information</a>
+
+                        <button type="submit" class="primary-button">Confirm and Email</button>
+
+                    </div>
+
+                </form>
+
+                <p class="mailto-note">
+
+                    Selecting <strong>Confirm and Email</strong> opens your computer's default email application using a <code>mailto:</code> link. No information is submitted to a web server.
+
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
