@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 4 by Brendan J. Mejia: a JavaScript damped oscillation calculator with an interactive Chart.js plot.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 4 - Plotting | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment4.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+
+        <script src="../JS/assignment4.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 4 - JavaScript Calculator and Plotting</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+    
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment4-main">
+
+            <section class="assignment4-introduction">
+
+                <h2>Damped Oscillation Calculator</h2>
+
+                <p>
+
+                    This calculator uses JavaScript to evaluate a damped oscillation equation over a range of x-values
+                    and then plots the calculated y-values using Chart.js.
+
+                </p>
+
+                <div class="equation-box" aria-label="Damped oscillation equation">
+
+                    <p><strong>Equation:</strong> y = A e<sup>-bx</sup> cos(&omega;x)</p>
+
+                </div>
+
+                <p>
+
+                    <strong>A</strong> is the starting amplitude, <strong>b</strong> controls how quickly the oscillation decreases,
+                    <strong>&omega;</strong> controls the oscillation frequency, and <strong>x</strong> is the independent variable.
+                    The calculated value <strong>y</strong> is plotted on the vertical axis while <strong>x</strong> is plotted on the horizontal axis.
+
+                </p>
+
+            </section>
+
+            <section class="assignment4-calculator" aria-labelledby="calculator-heading">
+
+                <h2 id="calculator-heading">Calculator Inputs</h2>
+
+                <p>Working example values are already entered. Change any value and select <strong>Calculate and Plot</strong>.</p>
+
+                <div id="assignment4-errors" class="form-errors" role="alert" aria-live="polite" hidden></div>
+
+                <form id="assignment4-form" class="assignment4-form" novalidate>
+
+                    <div class="assignment4-input-grid">
+
+                        <div class="form-field">
+
+                            <label for="amplitude">Amplitude (A)</label>
+
+                            <input type="number" id="amplitude" name="amplitude" value="7" step="any" required aria-describedby="amplitude-help amplitude-error">
+
+                            <span class="field-help" id="amplitude-help">Example: 7</span>
+
+                            <span class="field-error" id="amplitude-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="damping">Damping Coefficient (b)</label>
+
+                            <input type="number" id="damping" name="damping" value="0.32" min="0" step="any" required aria-describedby="damping-help damping-error">
+
+                            <span class="field-help" id="damping-help">Must be 0 or greater.</span>
+
+                            <span class="field-error" id="damping-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="frequency">Angular Frequency (&omega;)</label>
+
+                            <input type="number" id="frequency" name="frequency" value="4" min="0.000001" step="any" required aria-describedby="frequency-help frequency-error">
+
+                            <span class="field-help" id="frequency-help">Must be greater than 0.</span>
+
+                            <span class="field-error" id="frequency-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="x-min">Minimum x</label>
+
+                            <input type="number" id="x-min" name="xMin" value="0" step="any" required aria-describedby="x-min-error">
+
+                            <span class="field-error" id="x-min-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="x-max">Maximum x</label>
+
+                            <input type="number" id="x-max" name="xMax" value="12" step="any" required aria-describedby="x-max-error">
+
+                            <span class="field-error" id="x-max-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="x-step">x Step</label>
+
+                            <input type="number" id="x-step" name="xStep" value="0.3" min="0.000001" step="any" required aria-describedby="x-step-help x-step-error">
+
+                            <span class="field-help" id="x-step-help">Controls the spacing between calculated x-values.</span>
+
+                            <span class="field-error" id="x-step-error"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions assignment4-actions">
+
+                        <button type="submit" class="primary-button">Calculate and Plot</button>
+
+                        <button type="button" id="reset-example" class="secondary-button">Reset Example Values</button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section class="assignment4-results" aria-labelledby="plot-heading">
+
+                <div class="results-heading-row">
+
+                    <div>
+
+                        <h2 id="plot-heading">Damped Oscillation Plot</h2>
+
+                        <p id="result-summary" aria-live="polite">The example values will be plotted when the page loads.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="oscillation-chart" role="img" aria-label="Line chart showing the damped oscillation result over the selected x range.">
+
+                        Your browser does not support the canvas element used for this chart.
+
+                    </canvas>
+
+                </div>
+
+                <p id="chart-status" class="field-error" role="status" aria-live="polite"></p>
+
+            </section>
+
+            <section class="assignment4-table-section" aria-labelledby="values-heading">
+
+                <h2 id="values-heading">Calculated Values</h2>
+
+                <p>The table below shows the x-values and the corresponding y-values used to create the plot.</p>
+
+                <div class="assignment4-table-wrapper">
+
+                    <table class="assignment4-table">
+
+                        <caption>Calculated damped oscillation values</caption>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">x</th>
+
+                                <th scope="col">y</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="calculated-values"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+            
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
