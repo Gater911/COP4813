@@ -1,0 +1,117 @@
+/* Assignment 5 - HTML5 Canvas Spirograph */
+
+.assignment5-main {
+    width: min(1050px, calc(100% - 40px));
+}
+
+.assignment5-main > section {
+    width: 100%;
+}
+
+.assignment5-introduction p:last-child {
+    margin-bottom: 0;
+}
+
+.equation-box {
+    margin: 20px 0;
+    padding: 18px 20px;
+    border-left: 5px solid #24584f;
+    border-radius: 4px;
+    background-color: #eef4f2;
+    overflow-x: auto;
+}
+
+.equation-box p {
+    margin: 4px 0;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.6;
+}
+
+.assignment5-form {
+    margin-top: 24px;
+}
+
+.assignment5-input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.assignment5-form .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.assignment5-form .form-field label {
+    font-weight: bold;
+    color: #153f38;
+}
+
+.assignment5-form .form-field input {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #758b86;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #222222;
+    font: inherit;
+}
+
+.assignment5-form .form-field input:focus {
+    outline: 3px solid #b35300;
+    outline-offset: 2px;
+    border-color: #153f38;
+}
+
+.assignment5-form .form-field input[aria-invalid="true"] {
+    border: 2px solid #9b1c1c;
+}
+
+.assignment5-actions {
+    margin-top: 24px;
+}
+
+.assignment5-actions .primary-button:disabled {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+.drawing-status {
+    min-height: 1.6em;
+    margin: 18px 0 0;
+    font-weight: bold;
+    color: #153f38;
+}
+
+.spirograph-canvas-wrapper {
+    width: min(100%, 740px);
+    margin: 20px auto 0;
+    padding: 18px;
+    border: 1px solid #c8d5d2;
+    border-radius: 8px;
+    background-color: #f8fbfa;
+}
+
+#spirograph-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #758b86;
+    background-color: #ffffff;
+}
+
+@media (max-width: 800px) {
+    .assignment5-main {
+        width: min(100% - 20px, 1050px);
+    }
+
+    .assignment5-input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spirograph-canvas-wrapper {
+        padding: 10px;
+    }
+}

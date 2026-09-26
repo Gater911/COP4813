@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 5 by Brendan J. Mejia: an HTML5 Canvas Spirograph drawn with JavaScript.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 5 - Canvas Spirograph | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment5.css">
+
+        <script src="../JS/assignment5.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 5 - HTML5 Canvas Spirograph</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment5-main">
+
+            <section class="assignment5-introduction">
+
+                <h2>Spirograph Drawing</h2>
+
+                <p>
+
+                    Enter values for the outer circle radius, inner circle radius, and pen offset.
+                    Select <strong>Start Spirograph</strong> to draw the pattern on the canvas.
+
+                </p>
+
+                <div class="equation-box" aria-label="Spirograph equations">
+
+                    <p><strong>x = (R + r) cos(t) - (r + O) cos(((R + r) / r)t)</strong></p>
+
+                    <p><strong>y = (R + r) sin(t) - (r + O) sin(((R + r) / r)t)</strong></p>
+
+                </div>
+
+                <p>
+
+                    <strong>R</strong> is the radius of the outer fixed circle,
+                    <strong>r</strong> is the radius of the rotating inner circle,
+                    and <strong>O</strong> is the pen offset from the center of the inner circle.
+
+                </p>
+
+            </section>
+
+            <section class="assignment5-controls" aria-labelledby="controls-heading">
+
+                <h2 id="controls-heading">Spirograph Values</h2>
+
+                <p>
+
+                    Working example values are already entered. The inner radius <strong>r</strong>
+                    cannot be greater than the outer radius <strong>R</strong>.
+
+                </p>
+
+                <div id="assignment5-errors" class="form-errors" role="alert" aria-live="polite" hidden></div>
+
+                <form id="spirograph-form" class="assignment5-form" novalidate>
+
+                    <div class="assignment5-input-grid">
+
+                        <div class="form-field">
+
+                            <label for="outer-radius">Outer Radius (R)</label>
+
+                            <input type="number" id="outer-radius" name="outerRadius" min="20" max="250" step="1" value="105" required aria-describedby="outer-radius-help outer-radius-error">
+
+                            <span class="field-help" id="outer-radius-help">Accepted range: whole numbers from 20 to 250.</span>
+
+                            <span class="field-error" id="outer-radius-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="inner-radius">Inner Radius (r)</label>
+
+                            <input type="number" id="inner-radius" name="innerRadius" min="5" max="200" step="1" value="65" required aria-describedby="inner-radius-help inner-radius-error">
+
+                            <span class="field-help" id="inner-radius-help">Accepted range: whole numbers from 5 to 200, and r must be less than or equal to R.</span>
+
+                            <span class="field-error" id="inner-radius-error"></span>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="pen-offset">Pen Offset (O)</label>
+
+                            <input type="number" id="pen-offset" name="penOffset" min="0"  max="200" step="1" value="80" required aria-describedby="pen-offset-help pen-offset-error">
+                            
+                            <span class="field-help" id="pen-offset-help">Accepted range: whole numbers from 0 to 200.</span>
+
+                            <span class="field-error" id="pen-offset-error"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="assignment5-actions">
+
+                        <button type="submit" id="start-spirograph" class="primary-button">
+
+                            Start Spirograph
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <p id="drawing-status" class="drawing-status" role="status" aria-live="polite">
+
+                    Canvas is blank. Select Start Spirograph to begin.
+
+                </p>
+
+            </section>
+
+            <section class="assignment5-canvas-section" aria-labelledby="canvas-heading">
+
+                <h2 id="canvas-heading">Canvas</h2>
+
+                <div class="spirograph-canvas-wrapper">
+
+                    <canvas id="spirograph-canvas" width="700" height="700" aria-label="Canvas used to draw the Spirograph pattern">
+
+                        Your browser does not support the HTML5 canvas element.
+
+                    </canvas>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
