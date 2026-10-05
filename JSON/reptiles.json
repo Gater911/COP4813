@@ -1,0 +1,96 @@
+{
+    "collectionName": "Sample Reptile Collection",
+    "lastUpdated": "2026-10-05",
+    "reptiles": [
+        {
+            "id": 1,
+            "name": "Apollo",
+            "species": "Ball Python",
+            "morph": "Banana Pied",
+            "sex": "Male",
+            "hatchYear": 2024,
+            "status": "For Sale"
+        },
+        {
+            "id": 2,
+            "name": "Luna",
+            "species": "Ball Python",
+            "morph": "Pastel Clown",
+            "sex": "Female",
+            "hatchYear": 2023,
+            "status": "Holdback"
+        },
+        {
+            "id": 3,
+            "name": "Nova",
+            "species": "Ball Python",
+            "morph": "Fire Mojave",
+            "sex": "Female",
+            "hatchYear": 2025,
+            "status": "For Sale"
+        },
+        {
+            "id": 4,
+            "name": "Atlas",
+            "species": "Ball Python",
+            "morph": "Enchi Yellow Belly",
+            "sex": "Male",
+            "hatchYear": 2022,
+            "status": "NFS"
+        },
+        {
+            "id": 5,
+            "name": "Echo",
+            "species": "Ball Python",
+            "morph": "Pied",
+            "sex": "Female",
+            "hatchYear": 2024,
+            "status": "Sold"
+        },
+        {
+            "id": 6,
+            "name": "Orion",
+            "species": "Ball Python",
+            "morph": "Black Pastel Hypo",
+            "sex": "Male",
+            "hatchYear": 2025,
+            "status": "For Sale"
+        },
+        {
+            "id": 7,
+            "name": "Iris",
+            "species": "Ball Python",
+            "morph": "Lesser Pastel",
+            "sex": "Female",
+            "hatchYear": 2021,
+            "status": "NFS"
+        },
+        {
+            "id": 8,
+            "name": "Cosmo",
+            "species": "Ball Python",
+            "morph": "Orange Dream Clown",
+            "sex": "Male",
+            "hatchYear": 2024,
+            "status": "Holdback"
+        },
+        {
+            "id": 9,
+            "name": "Aurora",
+            "species": "Ball Python",
+            "morph": "Pastel Pied",
+            "sex": "Female",
+            "hatchYear": 2025,
+            "status": "For Sale"
+        },
+        {
+            "id": 10,
+            "name": "Titan",
+            "species": "Ball Python",
+            "morph": "Mojave",
+            "sex": "Male",
+            "hatchYear": 2023,
+            "status": "Sold"
+        }
+    ]
+}

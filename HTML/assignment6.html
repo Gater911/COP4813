@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 6 by Brendan J. Mejia: external JSON data loaded, parsed with JavaScript, and displayed in a responsive HTML table.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 6 - JSON | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment6.css">
+
+        <script src="../JS/assignment6.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 6 - JSON Data</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment6-main">
+
+            <section class="assignment6-introduction">
+
+                <h2>Reptile Collection JSON Viewer</h2>
+
+                <p>
+
+                    This page reads reptile information from an external JSON file. JavaScript loads the
+                    file, parses the JSON data, and creates the summary and table below without placing the
+                    animal records directly in the HTML.
+
+                </p>
+
+                <p>
+
+                    <a href="../JSON/reptiles.json" target="_blank" rel="noopener">
+
+                        View the external JSON data file
+
+                    </a>
+
+                </p>
+
+            </section>
+
+            <section class="assignment6-data-section" aria-labelledby="data-heading">
+
+                <div class="assignment6-heading-row">
+
+                    <div>
+
+                        <h2 id="data-heading">Collection Data</h2>
+
+                        <p id="collection-details">Loading JSON data...</p>
+
+                    </div>
+
+                    <div class="filter-field">
+
+                        <label for="status-filter">Filter by Status</label>
+
+                        <select id="status-filter" disabled>
+
+                            <option value="All">All</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div id="json-status" class="json-status" role="status" aria-live="polite">
+
+                    Loading external JSON file...
+
+                </div>
+
+                <div id="data-summary" class="data-summary" hidden>
+
+                    <article class="summary-card">
+
+                        <span class="summary-number" id="total-count">0</span>
+
+                        <span class="summary-label">Total Records</span>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <span class="summary-number" id="sale-count">0</span>
+
+                        <span class="summary-label">For Sale</span>
+
+                    </article>
+
+                    <article class="summary-card">
+
+                        <span class="summary-number" id="holdback-count">0</span>
+
+                        <span class="summary-label">Holdbacks</span>
+
+                    </article>
+
+                </div>
+
+                <div class="json-table-wrapper">
+
+                    <table class="json-table">
+
+                        <caption>Reptile records loaded from the external JSON file</caption>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">ID</th>
+
+                                <th scope="col">Name</th>
+
+                                <th scope="col">Species</th>
+
+                                <th scope="col">Morph</th>
+
+                                <th scope="col">Sex</th>
+
+                                <th scope="col">Hatch Year</th>
+
+                                <th scope="col">Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reptile-table-body">
+
+                            <tr>
+
+                                <td colspan="7">Waiting for JSON data...</td>
+                                
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
