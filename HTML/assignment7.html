@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 7 by Brendan J. Mejia: an interactive animal image drag-and-drop CAPTCHA demonstration using native HTML5 and JavaScript.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 7 - Drag and Drop | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment7.css">
+
+        <script src="../JS/assignment7.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 7 - Drag and Drop</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment7-main">
+
+            <section aria-labelledby="puzzle-heading">
+
+                <h2 id="puzzle-heading">Drag-and-Drop CAPTCHA</h2>
+
+                <p>Match the animal and its habitat. Each round shows either four animals and one habitat, or one animal and four habitats. Drag your choice into a habitat, then select Submit.</p>
+                
+            
+            </section>
+
+            <section class="panel" aria-label="Animal verification puzzle">
+
+                <p id="roundPrompt" class="round-prompt"></p>
+
+                <p class="step">01 &nbsp; Choose an animal</p>
+
+                <div class="animals" id="animals"></div>
+
+                <p class="step second">02 &nbsp; Match it to the habitat</p>
+
+                <div id="habitats" class="habitats"></div>
+
+                <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Ready when you are. Choose an image to begin.</p>
+
+                <div class="actions">
+
+                    <div class="puzzle-buttons">
+
+                        <button id="submit" type="button" disabled>Submit</button><button id="reset" type="button">Reset</button>
+
+                    </div>
+
+                </div>
+            
+            </section>
+        
+            
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>

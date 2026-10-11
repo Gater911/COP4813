@@ -1,0 +1,45 @@
+.assignment7-main { align-content: start; }
+.assignment7-note { color: #4b625d; font-size: .9rem; margin: 0; }
+.round-prompt { font-weight: bold; color: #24584f; margin: 0 0 22px; font-size: 1.15rem; }
+.step { font-size: 13px; font-weight: bold; margin: 0 0 16px; }
+.step.second { margin-top: 26px; }
+.animals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; min-height: 134px; }
+.animals.single-animal { grid-template-columns: minmax(0, 190px); justify-content: center; }
+.animal { min-width: 0; border: 2px solid transparent; background: #f2f5ef; border-radius: 14px; padding: 10px; cursor: grab; }
+.animal:hover { background: #e7eee0; }
+.animal[aria-pressed="true"] { border-color: #367956; }
+.animal img { display: block; margin: 0 auto; width: 100%; height: 110px; object-fit: contain; }
+.animal:focus-visible, .zone:focus-visible, .puzzle-buttons button:focus-visible { outline: 3px solid #b35300; outline-offset: 3px; }
+.animal:disabled { opacity: 1; cursor: default; }
+.habitats { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.habitats.multiple-habitats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.habitat-frame { position: relative; min-width: 0; }
+.zone { position: relative; overflow: hidden; display: block; padding: 0; aspect-ratio: 3 / 2; border: 3px dashed #758b86; border-radius: 16px; background: #eef4f2; cursor: pointer; }
+.habitat-image { display: block; width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 12px; pointer-events: none; }
+.zone.over, .zone.pending { border-color: #b35300; }
+.zone.success { border: 3px solid #24584f; box-shadow: 0 0 0 3px #c5e2c0; }
+.placed-animal { position: absolute; transform: translate(-50%, -50%); }
+.placed-animal:empty { display: none; }
+.placed-animal .animal, .placed-animal .animal:hover, .placed-animal .animal[aria-pressed="true"] { display: block; width: 135px; background: transparent; border: 0; box-shadow: none; padding: 0; }
+.placed-animal .animal img { height: 90px; }
+.multiple-habitats .placed-animal .animal { width: 95px; }
+.multiple-habitats .placed-animal .animal img { height: 65px; }
+.status { min-height: 50px; margin: 18px 0 0; padding: 12px 14px; border-radius: 10px; background: #f2f5ef; font-size: 14px; line-height: 1.5; }
+.status.error { background: #fff0e9; color: #903814; }
+.status.success { background: #e3f1df; color: #235533; }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 18px; }
+.hint { font-size: 12px; color: #53675a; margin: 0; max-width: 460px; }
+.puzzle-buttons { display: flex; gap: 10px; }
+.puzzle-buttons button { border: 1px solid #24584f; border-radius: 9px; font: inherit; font-size: 14px; font-weight: bold; padding: 12px 20px; cursor: pointer; }
+#submit { background: #24584f; color: white; }
+#submit:disabled { opacity: .5; cursor: not-allowed; }
+#reset { background: white; color: #24584f; }
+@media(max-width:520px) {
+ .animals { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+ .animal img { height: 85px; }
+ .habitats.multiple-habitats { grid-template-columns: minmax(0, 1fr); }
+ .actions { flex-direction: column; align-items: flex-start; }
+ .hint { max-width: none; }
+ .placed-animal .animal { width: 95px; }
+ .placed-animal .animal img { height: 65px; }
+}
