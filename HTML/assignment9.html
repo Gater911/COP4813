@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 9 by Brendan J. Mejia: an interactive JavaScript canvas animation with a facially animated ball that reacts to the cursor and mouse clicks.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 9 - Animation | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment9.css">
+
+        <script src="../JS/assignment9.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 9 - Animation</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment9-main">
+
+            <section>
+
+                <h2>Interactive Bouncing Ball Animation</h2>
+
+                <p>
+
+                    This animation uses JavaScript and the HTML5 canvas. The ball has an animated face,
+                    watches the cursor, becomes more frightened as the cursor gets closer, and dynamically rolls away.
+
+                </p>
+
+                <p>
+
+                    Click the ball on the ground to make it jump. Clicking it again while it is in the air changes
+                    its color. If it is trapped in a corner it shakes in fear, and a high fall creates a visible impact.
+
+                </p>
+
+            </section>
+
+            <section class="animation-panel" aria-labelledby="animation-heading">
+
+                <div class="animation-heading-row">
+
+                    <div>
+
+                        <h2 id="animation-heading">Animation Canvas</h2>
+
+                        <p id="animation-status" class="animation-status" role="status" aria-live="polite">Move the cursor near the ball. Click the ball to make it jump.</p>
+
+                    </div>
+
+                    <div class="animation-buttons">
+
+                        <button id="pause" type="button">Pause</button>
+
+                        <button id="reset" type="button">Reset</button>
+
+                    </div>
+
+                </div>
+
+                <div class="canvas-frame">
+
+                    <canvas id="animation-canvas" width="800" height="500" aria-label="Animated ball with a face that watches the cursor, rolls away, and jumps when clicked">
+
+                        Your browser does not support the HTML5 canvas element.
+
+                    </canvas>
+
+                </div>
+
+                <div class="animation-counts">
+
+                    <p><strong>Ball clicks:</strong> <span id="click-count">0</span></p>
+
+                    <p><strong>Impacts:</strong> <span id="bounce-count">0</span></p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
