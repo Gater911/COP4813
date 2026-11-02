@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 10 by Brendan J. Mejia: a mobile readiness review and Google Lighthouse audit of the COP4813 portfolio homepage.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 10 - Mobile Ready | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment10.css">
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 10 - Mobile Ready</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment10-main">
+
+            <section>
+
+                <h2>Mobile Readiness and Lighthouse Audit</h2>
+
+                <p>
+
+                    For this assignment, I reviewed the mobile version of my COP4813 homepage and tested
+                    the published page using Google Lighthouse in Mobile Navigation mode. The homepage uses
+                    responsive CSS so the same content and navigation remain available while the layout
+                    adjusts to smaller screens.
+
+                </p>
+
+                <p>
+
+                    The Lighthouse audit was run in an Incognito browser window on
+                    <a href="../index.html">my published COP4813 homepage</a>.
+                    Lighthouse emulated a Moto G Power device using Slow 4G throttling.
+
+                </p>
+
+            </section>
+
+            <section>
+
+                <h2>Mobile Interface</h2>
+
+                <p>
+
+                    The homepage is designed to work on both desktop and mobile devices without requiring
+                    a separate mobile page. On smaller screens, the page content changes to a single-column
+                    layout, images scale within the available screen width, and the navigation remains
+                    available for touch interaction.
+
+                </p>
+
+                <p>
+
+                    This allows the mobile version to provide the same primary features as the standard
+                    homepage while keeping the content readable and easy to navigate on a smaller display.
+
+                </p>
+
+            </section>
+
+            <section>
+
+                <h2>Overall Lighthouse Results</h2>
+
+                <div class="score-grid" aria-label="Lighthouse category scores">
+
+                    <article class="score-card">
+
+                        <span class="score-number">100</span>
+
+                        <span class="score-label">Performance</span>
+
+                    </article>
+
+                    <article class="score-card">
+
+                        <span class="score-number">100</span>
+
+                        <span class="score-label">Accessibility</span>
+
+                    </article>
+
+                    <article class="score-card">
+
+                        <span class="score-number">100</span>
+
+                        <span class="score-label">Best Practices</span>
+
+                    </article>
+
+                    <article class="score-card">
+
+                        <span class="score-number">100</span>
+
+                        <span class="score-label">SEO</span>
+
+                    </article>
+
+                </div>
+
+                <p>
+
+                    The Incognito Lighthouse test produced a score of 100 in every scored category.
+                    Running the audit in Incognito prevented browser extensions from interfering with
+                    the test and provided a cleaner measurement of the published homepage.
+
+                </p>
+
+                <figure class="report-figure">
+
+                    <img
+                        src="../Assets/Images/Assignment10/lighthouse-overall-incognito.png"
+                        alt="Incognito Lighthouse mobile audit showing scores of 100 for Performance, Accessibility, Best Practices, and SEO."
+                    >
+
+                    <figcaption>
+
+                        Overall Lighthouse mobile results from the Incognito test.
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+            <section>
+
+                <h2>Performance Analysis</h2>
+
+                <div class="metric-grid">
+
+                    <div>
+
+                        <strong>0.8 s</strong>
+
+                        <span>First Contentful Paint</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>0.8 s</strong>
+
+                        <span>Largest Contentful Paint</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>30 ms</strong>
+
+                        <span>Total Blocking Time</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>0</strong>
+
+                        <span>Cumulative Layout Shift</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>0.8 s</strong>
+
+                        <span>Speed Index</span>
+
+                    </div>
+
+                </div>
+
+                <p>
+
+                    The homepage received a Performance score of 100. The page displayed its first content
+                    in 0.8 seconds, the largest visible content was also displayed in 0.8 seconds, and the
+                    Total Blocking Time was only 30 milliseconds. The Cumulative Layout Shift score was 0,
+                    which means the visible content remained stable while the page loaded.
+
+                </p>
+
+                <p>
+
+                    Lighthouse still listed unscored improvement opportunities involving cache lifetimes
+                    and image delivery. The Reefside Reptiles logo is the largest downloaded resource, so
+                    using a more compressed image or a modern image format could reduce the amount of data
+                    transferred. These recommendations did not prevent the page from receiving a 100
+                    Performance score.
+
+                </p>
+
+                <figure class="report-figure">
+
+                    <img
+                        src="../Assets/Images/Assignment10/lighthouse-performance-incognito.png"
+                        alt="Incognito Lighthouse Performance results showing a 0.8 second Speed Index and performance insights including caching and image delivery."
+                    >
+
+                    <figcaption>
+
+                        Lighthouse Performance metrics and optional optimization opportunities.
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+            <section>
+
+                <h2>Accessibility Analysis</h2>
+
+                <p>
+
+                    The homepage received an Accessibility score of 100. The automated Lighthouse audit
+                    did not identify a scored accessibility failure. The report also lists items that should
+                    still be reviewed manually because automated testing cannot evaluate every part of
+                    accessibility.
+
+                </p>
+
+                <p>
+
+                    The passed checks include areas such as alternate text for images, valid page language,
+                    sufficient color contrast, logical heading structure, touch-target size, a main landmark,
+                    and a focusable skip link.
+
+                </p>
+
+                <figure class="report-figure">
+
+                    <img
+                        src="../Assets/Images/Assignment10/lighthouse-accessibility-incognito.png"
+                        alt="Incognito Lighthouse report showing an Accessibility score of 100 and passed accessibility audits."
+                    >
+
+                    <figcaption>
+
+                        Lighthouse Accessibility results from the mobile audit.
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+            <section>
+
+                <h2>Best Practices Analysis</h2>
+
+                <p>
+
+                    The homepage received a Best Practices score of 100. The Lighthouse audit did not
+                    identify a scored Best Practices failure. The report also contains informational checks
+                    related to trust and safety, browser compatibility, and other web-development practices
+                    that can be considered as the website continues to grow.
+
+                </p>
+
+                <figure class="report-figure">
+
+                    <img
+                        src="../Assets/Images/Assignment10/lighthouse-best-practices-incognito.png"
+                        alt="Incognito Lighthouse report showing a Best Practices score of 100 and trust, safety, and browser compatibility checks."
+                    >
+
+                    <figcaption>
+
+                        Lighthouse Best Practices results.
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+            <section>
+
+                <h2>SEO Analysis</h2>
+
+                <p>
+
+                    The homepage received an SEO score of 100. Lighthouse found that the homepage met the
+                    basic search-engine optimization checks included in the audit. The report also notes that
+                    some SEO factors must be checked manually and that Lighthouse does not measure every
+                    factor that can affect search ranking.
+
+                </p>
+
+                <figure class="report-figure">
+
+                    <img
+                        src="../Assets/Images/Assignment10/lighthouse-seo-incognito.png"
+                        alt="Incognito Lighthouse report showing an SEO score of 100 with additional manual SEO checks."
+                    >
+
+                    <figcaption>
+
+                        Lighthouse SEO results and audit information.
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+            <section>
+
+                <h2>Conclusion</h2>
+
+                <p>
+
+                    The mobile Lighthouse test shows that the COP4813 homepage is performing well on a
+                    simulated mobile device. It received scores of 100 for Performance, Accessibility,
+                    Best Practices, and SEO. The responsive layout allows the same homepage to be used on
+                    desktop and mobile devices while adapting the content to the available screen size.
+
+                </p>
+
+                <p>
+
+                    Although the audit produced perfect category scores, Lighthouse still identified optional
+                    performance improvements involving image size and caching. These can be considered in
+                    future updates, but they did not prevent the homepage from meeting the mobile-readiness
+                    goals of this assignment.
+
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>

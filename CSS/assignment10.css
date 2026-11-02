@@ -1,0 +1,21 @@
+.assignment10-main { align-content: start; }
+.score-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin: 24px 0; }
+.score-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 135px; padding: 18px; border: 1px solid #b9d8cf; border-radius: 8px; background: #eef8f4; text-align: center; }
+.score-number { color: #16874e; font-size: 2.6rem; font-weight: bold; line-height: 1; }
+.score-label { margin-top: 10px; font-weight: bold; }
+.metric-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 14px; margin: 22px 0; }
+.metric-grid > div { display: flex; flex-direction: column; min-height: 105px; padding: 16px; border: 1px solid #c8d5d2; border-radius: 6px; background: #fbfdfc; }
+.metric-grid strong { color: #24584f; font-size: 1.45rem; }
+.metric-grid span { margin-top: 7px; line-height: 1.35; }
+.report-figure { margin: 26px 0 0; }
+.report-figure img { width: 100%; max-width: 1000px; height: auto; margin: 0 auto; border: 1px solid #c8d5d2; border-radius: 6px; background: white; }
+.report-figure figcaption { margin-top: 10px; color: #4b625d; font-size: .95rem; text-align: center; }
+@media(max-width:800px) {
+ .score-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:500px) {
+ .score-grid,.metric-grid { grid-template-columns: 1fr; }
+ .score-card { min-height: 110px; }
+ .report-figure { margin-top: 20px; }
+}
