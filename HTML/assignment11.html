@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 11 by Brendan J. Mejia: a dynamic Daytona State College BSIT course advisor built from external JSON data.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 11 - Dynamic BSIT Advisor | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment11.css">
+
+        <script src="../JS/assignment11.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 11 - Dynamic Objects</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment11-main">
+
+            <section>
+
+                <p class="advisor-label">Daytona State College</p>
+
+                <h2>BSIT Dynamic Course Advisor</h2>
+
+                <p>
+
+                    This advising tool uses an external JSON file to dynamically create the course
+                    interface for the Bachelor of Science in Information Technology program. The advisor
+                    starts blank so you can enter everything manually. The optional
+                    <strong>Load Advisor Example</strong> button only fills a sample set of lower-level
+                    prerequisite checkboxes; it does not create semesters or add program courses.
+
+                </p>
+
+                <p>
+
+                    The advisor demonstrates AND prerequisites, OR prerequisites, corequisites,
+                    dynamically generated interface elements, drag and drop, and JavaScript event handling.
+
+                </p>
+
+                <div class="source-links">
+
+                    <a class="button-link" href="https://daytonastate.smartcatalogiq.com/en/2026-2027/college-catalog/program-guides/bs-degree/information-technology-bsit-b-s-degree" target="_blank" rel="noopener">
+                        BSIT Catalog
+                    </a>
+
+                    <a class="button-link secondary-link" href="https://www.daytonastate.edu/academic-departments/college-of-business-engineering-and-technology/school-of-engineering-technology/bachelor-information-technology.html" target="_blank" rel="noopener">
+                        BSIT Program Page
+                    </a>
+
+                    <a class="button-link secondary-link" href="../JSON/bsit_courses.json" target="_blank" rel="noopener">
+                        View JSON Data
+                    </a>
+
+                </div>
+
+            </section>
+
+            <section class="advisor-controls">
+
+                <div>
+
+                    <h2>Advisor Controls</h2>
+
+                    <p id="data-status" class="data-status" role="status" aria-live="polite">
+                        Loading BSIT course data...
+                    </p>
+
+                </div>
+
+                <div class="control-row">
+
+                    <button type="button" id="example-button" class="advisor-button" disabled>
+                        Load Advisor Example
+                    </button>
+
+                    <button type="button" id="reset-button" class="advisor-button secondary-button" disabled>
+                        Reset Advisor
+                    </button>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <h2>Progress Summary</h2>
+
+                <div class="advisor-summary">
+
+                    <article>
+
+                        <strong id="completed-credits">0</strong>
+
+                        <span>Completed Program Credits / 48</span>
+
+                    </article>
+
+                    <article>
+
+                        <strong id="available-count">0</strong>
+
+                        <span>Available to Plan</span>
+
+                    </article>
+
+                    <article>
+
+                        <strong id="planned-credits">0</strong>
+
+                        <span>Planned Program Credits</span>
+
+                    </article>
+
+                    <article>
+
+                        <strong id="elective-status">0 / 3</strong>
+
+                        <span>Program Elective Requirement</span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <h2>Step 1 - Courses Already Completed</h2>
+
+                        <p>
+
+                            Select the prerequisite and lower-level courses you have completed. In
+                            "choose one" groups, selecting one option disables the other alternatives
+                            because only one is required for this advisor.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div id="foundation-groups" class="foundation-groups"></div>
+
+            </section>
+
+            <section>
+
+                <h2>Step 2 - Program Courses</h2>
+
+                <p>
+
+                    These cards are created dynamically from the JSON data and are used to review
+                    each program course, its current status, and its requirements. Mark a program
+                    course complete after you have taken it, or select <strong>Details</strong> for
+                    prerequisites, semester availability, notes, and its catalog link.
+
+                </p>
+
+                <div class="course-legend" aria-label="Course status legend">
+
+                    <span class="legend-item status-available">Available</span>
+
+                    <span class="legend-item status-locked">Prerequisite Needed</span>
+
+                    <span class="legend-item status-completed">Completed</span>
+
+                    <span class="legend-item status-planned">Planned</span>
+
+                </div>
+
+                <div id="program-courses" class="course-grid"></div>
+
+            </section>
+
+                        <section id="details-section" class="details-section" aria-labelledby="details-heading">
+
+                <h2 id="details-heading">Course Information</h2>
+
+                <div id="course-details" class="course-details">
+
+                    <p>Select the <strong>Details</strong> button on any program course to view information here.</p>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <h2>Step 3 - Build a Degree Plan</h2>
+
+                <p>
+
+                    Add each semester and year you want to use for your plan manually. The
+                    <strong>active planning semester</strong> is only a visual planning focus; it no longer
+                    controls which courses appear below. As soon as a prerequisite is completed or planned,
+                    its dependent course can appear in <strong>Courses You Can Take</strong>. If you do not
+                    yet have a valid semester for that course, add one and then drag the course into it.
+                    Courses already in the plan can also be dragged to another semester
+                    as long as the new placement keeps the prerequisite sequence valid. While a course is
+                    being dragged, any semester that is not a valid destination is highlighted red. This
+                    includes the semester containing a planned prerequisite, every semester before that
+                    prerequisite, and any semester in which the course is not offered. Nothing is preloaded
+                    or automatically added.
+
+                </p>
+
+                <div class="planner-builder">
+
+                    <div class="planner-add-row">
+
+                        <label for="plan-term-select">
+
+                            Semester
+
+                            <select id="plan-term-select" disabled>
+
+                                <option value="Fall">Fall</option>
+
+                                <option value="Spring">Spring</option>
+
+                                <option value="Summer">Summer</option>
+
+                            </select>
+
+                        </label>
+
+                        <label for="plan-year">
+
+                            Year
+
+                            <input type="number" id="plan-year" min="2026" max="2036" step="1" value="2026" disabled>
+
+                        </label>
+
+                        <button type="button" id="add-semester-button" class="advisor-button" disabled>
+                            Add Semester
+                        </button>
+
+                    </div>
+
+                    <div id="active-plan-banner" class="active-plan-banner" role="status" aria-live="polite">
+                        Add a semester below to begin building your degree plan.
+                    </div>
+
+                </div>
+
+                <div class="planner-highlight-legend" aria-label="Drag highlight legend">
+
+                    <span class="highlight-key invalid-key">Red = Invalid Destination</span>
+
+                </div>
+
+                <div class="available-heading">
+
+                    <h3>Courses You Can Take</h3>
+
+                    <p>
+
+                        A course appears here as soon as its prerequisites have been completed or
+                        placed somewhere in your degree plan. It does not need to match an existing
+                        planning semester yet. The <strong>Offered</strong> line shows which semesters
+                        normally offer the course. When you click and hold a course, a visible floating
+                        copy follows your cursor until you drop it, while red highlighting shows invalid
+                        destinations.
+
+                    </p>
+
+                </div>
+
+                <div id="available-courses" class="available-list"></div>
+
+                <div id="plan-message" class="plan-message" role="status" aria-live="polite">
+                    Add and select a semester to begin planning.
+                </div>
+
+                <div id="plan-grid" class="plan-grid"></div>
+
+            </section>
+
+            <section>
+
+                <h2>Assignment Modifications and Features</h2>
+
+                <ol>
+
+                    <li>Used the Daytona State College 2026-2027 BSIT degree program instead of the example advisor.</li>
+
+                    <li>Created the course and prerequisite structure in an external JSON file.</li>
+
+                    <li>Added recursive AND and OR prerequisite checking.</li>
+
+                    <li>Added corequisite checking for courses that allow a course to be taken in the same semester.</li>
+
+                    <li>Added mutually exclusive "choose one" lower-level requirements.</li>
+
+                    <li>Added semester-aware course availability for Fall, Spring, and Summer.</li>
+
+                    <li>Added dynamically generated course cards, status badges, course information, and catalog links.</li>
+
+                    <li>Added a customizable multi-year degree planner with user-selected semesters and years.</li>
+
+                    <li>Added prerequisite sequencing so courses planned in earlier semesters unlock dependent courses in later semesters.</li>
+
+                    <li>Added HTML5 drag and drop from the dynamically generated eligible-course list into planned semesters.</li>
+
+                    <li>Added drag-and-drop rescheduling of planned courses with prerequisite-sequence validation and a single red invalid-destination highlight for prerequisite semesters, earlier semesters, and semesters where the course is not offered.</li>
+
+                    <li>The advisor starts blank on every page load so completed courses, semesters, years, and planned courses are all entered manually.</li>
+
+                </ol>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
