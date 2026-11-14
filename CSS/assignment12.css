@@ -1,0 +1,31 @@
+.assignment12-main { width: min(1500px,calc(100% - 40px)); align-content: start; }
+.assignment12-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.table-heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.table-heading-row h2 { margin-bottom: 6px; }
+.table-heading-row p { margin: 0; color: #4b625d; }
+.cms-filter { display: flex; flex-direction: column; gap: 6px; min-width: 230px; color: #153f38; font-weight: bold; }
+.cms-filter input { padding: 10px 12px; border: 1px solid #758b86; border-radius: 6px; background: white; font: inherit; }
+.cms-filter input:focus-visible { outline: 3px solid #b35300; outline-offset: 3px; }
+.cms-table-wrapper { width: 100%; margin-top: 18px; overflow-x: auto; border: 1px solid #c8d5d2; border-radius: 8px; background: white; }
+.cms-table { width: 100%; min-width: 1280px; border-collapse: collapse; }
+.cms-table caption { padding: 12px 14px; color: #4b625d; font-size: .92rem; text-align: center; }
+.cms-table th,.cms-table td { padding: 14px; border-top: 1px solid #dfe7e5; border-right: 1px solid #dfe7e5; vertical-align: middle; text-align: center; line-height: 1.45; }
+.cms-table th:last-child,.cms-table td:last-child { border-right: 0; }
+.cms-table thead th { border-top: 0; background: #24584f; color: white; font-size: .92rem; }
+.cms-table tbody tr:nth-child(even) { background: #f7faf9; }
+.cms-table tbody tr:hover { background: #eef6f3; }
+.system-name { min-width: 120px; color: #153f38; font-size: 1.02rem; }
+.cms-list { margin: 0; padding-left: 0; list-style-position: inside; text-align: center; }
+.cms-list li { margin-bottom: 7px; }
+.cms-list li:last-child { margin-bottom: 0; }
+.cell-sources { margin-top: 10px; padding-top: 8px; border-top: 1px solid #dfe7e5; font-size: .78rem; line-height: 1.4; text-align: center; }
+.cell-sources::before { content: 'Sources: '; color: #4b625d; font-weight: bold; }
+.cell-sources a { color: #24584f; }
+.example-site { display: inline-block; font-weight: bold; text-align: center; }
+.no-results { padding: 22px !important; color: #4b625d; text-align: center !important; }
+@media(max-width:800px) {
+ .assignment12-main { width: min(100% - 20px,1500px); }
+ .table-heading-row { align-items: stretch; flex-direction: column; }
+ .cms-filter { width: 100%; min-width: 0; }
+ .cms-table-wrapper { margin-top: 14px; }
+}

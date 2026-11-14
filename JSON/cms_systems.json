@@ -1,0 +1,341 @@
+{
+    "assignment": "Assignment 12 - Content Management Systems",
+    "researched": "November 14, 2026",
+    "systems": [
+        {
+            "system": "WordPress",
+            "support": [
+                "Free and open-source CMS distributed through WordPress.org.",
+                "Large global community and broad commercial hosting support."
+            ],
+            "technology": [
+                "Server: PHP; WordPress recommends PHP 8.3 or newer.",
+                "Database: MariaDB 10.11+ or MySQL 8.4+ recommended.",
+                "Client: themes generate HTML/CSS/JavaScript; commonly hosted on Apache or Nginx."
+            ],
+            "capabilities": [
+                "Large theme and plugin ecosystem.",
+                "Block-based content editing and custom themes/templates.",
+                "REST API for integrations and headless/decoupled use.",
+                "User roles, media management, SEO and e-commerce through extensions."
+            ],
+            "limitations": [
+                "Core, plugins, and themes must be kept updated for security.",
+                "Plugin/theme compatibility should be checked when upgrading.",
+                "Complex sites can become dependent on multiple third-party plugins."
+            ],
+            "example": {
+                "name": "NASA",
+                "url": "https://www.nasa.gov/"
+            },
+            "sources": {
+                "support": [
+                    {
+                        "label": "WordPress Requirements",
+                        "url": "https://wordpress.org/about/requirements/"
+                    }
+                ],
+                "technology": [
+                    {
+                        "label": "WordPress Requirements",
+                        "url": "https://wordpress.org/about/requirements/"
+                    }
+                ],
+                "capabilities": [
+                    {
+                        "label": "WordPress Plugin Directory",
+                        "url": "https://wordpress.org/plugins/"
+                    },
+                    {
+                        "label": "WordPress REST API",
+                        "url": "https://developer.wordpress.org/rest-api/"
+                    }
+                ],
+                "limitations": [
+                    {
+                        "label": "WordPress Security Guide",
+                        "url": "https://developer.wordpress.org/advanced-administration/security/"
+                    },
+                    {
+                        "label": "Updating WordPress",
+                        "url": "https://wordpress.org/documentation/article/updating-wordpress/"
+                    }
+                ],
+                "example": [
+                    {
+                        "label": "WordPress Showcase",
+                        "url": "https://wordpress.org/showcase/"
+                    }
+                ]
+            }
+        },
+        {
+            "system": "Drupal",
+            "support": [
+                "Open-source content management platform.",
+                "Supported by the Drupal community, Drupal Association, hosting providers, and certified partners."
+            ],
+            "technology": [
+                "Server: PHP with an object-oriented framework using Symfony components and Composer workflows.",
+                "Database: MariaDB/MySQL, PostgreSQL, or SQLite depending on Drupal version.",
+                "Client: Twig templates plus HTML/CSS/JavaScript; supports traditional and decoupled front ends."
+            ],
+            "capabilities": [
+                "Strong structured-content modeling and customizable views.",
+                "Modules and themes extend functionality and presentation.",
+                "Content moderation/workflows and granular permissions.",
+                "APIs and decoupled publishing for multiple front ends."
+            ],
+            "limitations": [
+                "More developer-oriented setup and maintenance than simpler CMS platforms.",
+                "Composer, PHP, database, and server-version requirements add operational complexity.",
+                "Major upgrades can require checking contributed-module compatibility."
+            ],
+            "example": {
+                "name": "Penn State News",
+                "url": "https://www.psu.edu/news/"
+            },
+            "sources": {
+                "support": [
+                    {
+                        "label": "Drupal Core Project",
+                        "url": "https://www.drupal.org/project/drupal"
+                    }
+                ],
+                "technology": [
+                    {
+                        "label": "Drupal System Requirements",
+                        "url": "https://www.drupal.org/docs/getting-started/system-requirements"
+                    },
+                    {
+                        "label": "Drupal Core Project",
+                        "url": "https://www.drupal.org/project/drupal"
+                    }
+                ],
+                "capabilities": [
+                    {
+                        "label": "Drupal Core Project",
+                        "url": "https://www.drupal.org/project/drupal"
+                    }
+                ],
+                "limitations": [
+                    {
+                        "label": "Drupal System Requirements",
+                        "url": "https://www.drupal.org/docs/getting-started/system-requirements"
+                    }
+                ],
+                "example": [
+                    {
+                        "label": "Penn State News Drupal Case Study",
+                        "url": "https://new.drupal.org/case-study/penn-state-news-simplifying-large-scale-publishing"
+                    }
+                ]
+            }
+        },
+        {
+            "system": "Joomla!",
+            "support": [
+                "Free and open-source CMS released under the GPL.",
+                "Supported by the Joomla community, documentation, forums, and professional service providers."
+            ],
+            "technology": [
+                "Server: PHP; Joomla 5.x recommends PHP 8.3.",
+                "Database: MySQL, MariaDB, or PostgreSQL.",
+                "Client: templates, Bootstrap-based responsive output, HTML/CSS/JavaScript; runs on Apache, Nginx, or IIS."
+            ],
+            "capabilities": [
+                "Templates, template overrides, plugins, modules, and components.",
+                "Built-in multilingual content support.",
+                "Granular Access Control List (ACL) user permissions.",
+                "SEO tools, content versioning, menu management, caching, and frontend editing."
+            ],
+            "limitations": [
+                "Self-hosted sites require ongoing PHP/database/web-server maintenance.",
+                "Advanced functionality may depend on third-party extensions and template compatibility.",
+                "Administrators must keep both core and extensions updated."
+            ],
+            "example": {
+                "name": "Circuit Paul Ricard",
+                "url": "https://www.circuitpaulricard.com/"
+            },
+            "sources": {
+                "support": [
+                    {
+                        "label": "Joomla Core Features",
+                        "url": "https://www.joomla.org/about-joomla/core-features.html"
+                    }
+                ],
+                "technology": [
+                    {
+                        "label": "Joomla Technical Requirements",
+                        "url": "https://manual.joomla.org/docs/5.4/get-started/technical-requirements/"
+                    }
+                ],
+                "capabilities": [
+                    {
+                        "label": "Joomla Core Features",
+                        "url": "https://www.joomla.org/about-joomla/core-features.html"
+                    }
+                ],
+                "limitations": [
+                    {
+                        "label": "Joomla Technical Requirements",
+                        "url": "https://manual.joomla.org/docs/5.4/get-started/technical-requirements/"
+                    },
+                    {
+                        "label": "Joomla Extensions",
+                        "url": "https://docs.joomla.org/Extension/en"
+                    }
+                ],
+                "example": [
+                    {
+                        "label": "Joomla Showcase Directory",
+                        "url": "https://showcase.joomla.org/"
+                    }
+                ]
+            }
+        },
+        {
+            "system": "Ghost",
+            "support": [
+                "Open-source publishing platform operated by the non-profit Ghost Foundation.",
+                "Free self-hosted core plus paid managed Ghost(Pro) hosting."
+            ],
+            "technology": [
+                "Official production stack: Ubuntu 24, Node.js 22 LTS, MySQL 8, and Nginx.",
+                "Client: Ghost themes render HTML/CSS/JavaScript; APIs support headless front ends."
+            ],
+            "capabilities": [
+                "Professional publishing editor and custom themes.",
+                "Built-in email newsletters, memberships, and paid subscriptions.",
+                "Native analytics and audience/member management.",
+                "Content/Admin APIs, webhooks, embeds, and third-party integrations."
+            ],
+            "limitations": [
+                "Designed primarily for publishing, newsletters, memberships, and content businesses rather than every type of web application.",
+                "Officially supported self-hosted production stack is intentionally narrow.",
+                "Uses integrations instead of a traditional installable plugin marketplace."
+            ],
+            "example": {
+                "name": "Buffer Resources",
+                "url": "https://buffer.com/resources/"
+            },
+            "sources": {
+                "support": [
+                    {
+                        "label": "About Ghost",
+                        "url": "https://ghost.org/about/"
+                    }
+                ],
+                "technology": [
+                    {
+                        "label": "Hosting Ghost",
+                        "url": "https://docs.ghost.org/hosting/"
+                    }
+                ],
+                "capabilities": [
+                    {
+                        "label": "Ghost Platform",
+                        "url": "https://ghost.org/"
+                    },
+                    {
+                        "label": "Ghost Integrations",
+                        "url": "https://ghost.org/integrations/"
+                    }
+                ],
+                "limitations": [
+                    {
+                        "label": "Hosting Ghost",
+                        "url": "https://docs.ghost.org/hosting/"
+                    },
+                    {
+                        "label": "Ghost Integrations",
+                        "url": "https://ghost.org/integrations/"
+                    }
+                ],
+                "example": [
+                    {
+                        "label": "Buffer Resources on Ghost Explore",
+                        "url": "https://explore.ghost.org/p/buffer-resources"
+                    }
+                ]
+            }
+        },
+        {
+            "system": "Strapi",
+            "support": [
+                "Open-source headless CMS developed by Strapi.",
+                "Can be self-hosted or run through the commercial Strapi Cloud service."
+            ],
+            "technology": [
+                "Server: Node.js with JavaScript/TypeScript.",
+                "Database: SQLite, MySQL, MariaDB, or PostgreSQL.",
+                "Admin panel is a web application; content is delivered to a separate front end through APIs."
+            ],
+            "capabilities": [
+                "Visual Content-Type Builder and Content Manager.",
+                "Automatically generated REST APIs; GraphQL available through a plugin.",
+                "Role-based permissions, JWT user authentication, localization, media, components, and dynamic zones.",
+                "Good fit for websites, mobile apps, and other omnichannel/headless front ends."
+            ],
+            "limitations": [
+                "Headless architecture means a separate user-facing front end must be built or connected.",
+                "Strapi 5 does not support MongoDB/other NoSQL databases.",
+                "Connecting to a pre-existing database not created by Strapi is unsupported.",
+                "GraphQL requires a plugin and media uploads use REST rather than GraphQL."
+            ],
+            "example": {
+                "name": "PostHog",
+                "url": "https://posthog.com/"
+            },
+            "sources": {
+                "support": [
+                    {
+                        "label": "Strapi Documentation",
+                        "url": "https://docs.strapi.io/"
+                    }
+                ],
+                "technology": [
+                    {
+                        "label": "Strapi Database Configuration",
+                        "url": "https://docs.strapi.io/cms/configurations/database"
+                    },
+                    {
+                        "label": "Strapi Customization Architecture",
+                        "url": "https://docs.strapi.io/cms/customization"
+                    }
+                ],
+                "capabilities": [
+                    {
+                        "label": "Strapi Content API",
+                        "url": "https://docs.strapi.io/cms/api/content-api"
+                    },
+                    {
+                        "label": "Strapi Content-Type Builder",
+                        "url": "https://docs.strapi.io/cms/features/content-type-builder"
+                    },
+                    {
+                        "label": "Users & Permissions",
+                        "url": "https://docs.strapi.io/cms/features/users-permissions"
+                    }
+                ],
+                "limitations": [
+                    {
+                        "label": "Strapi Database Configuration",
+                        "url": "https://docs.strapi.io/cms/configurations/database"
+                    },
+                    {
+                        "label": "Strapi GraphQL API",
+                        "url": "https://docs.strapi.io/cms/api/graphql"
+                    }
+                ],
+                "example": [
+                    {
+                        "label": "PostHog Strapi Case Study",
+                        "url": "https://strapi.io/user-stories/posthog"
+                    }
+                ]
+            }
+        }
+    ]
+}

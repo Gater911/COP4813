@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="COP4813 Assignment 12 by Brendan J. Mejia: a JSON-generated comparison of five content management systems.">
+
+        <meta name="author" content="Brendan J. Mejia">
+
+        <title>Assignment 12 - Content Management Systems | COP4813</title>
+
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <link rel="stylesheet" href="../CSS/assignment12.css">
+
+        <script src="../JS/assignment12.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header>
+
+            <h1>COP4813</h1>
+
+            <p>Assignment 12 - Content Management Systems</p>
+
+        </header>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-menu">
+
+                <li><a href="../index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a aria-current="location" href="assignments.html">My Assignments</a></li>
+
+                <li><a href="projects.html">My Projects</a></li>
+
+            </ul>
+
+        </nav>
+
+        <main id="main-content" class="single-column-main assignment12-main">
+
+            <section>
+
+                <h2>Content Management System Comparison</h2>
+
+                <p>
+
+                    This assignment compares five content management systems using current information
+                    from official documentation, product pages, and official showcase or case-study pages.
+                    The comparison data is stored in an external JSON file and the table below is generated
+                    dynamically with JavaScript.
+
+                </p>
+
+                <p>
+
+                    Each category includes source links so the technical stack, capabilities, limitations,
+                    and example sites can be verified. The research was reviewed on November 14, 2026.
+
+                </p>
+
+                <div class="assignment12-links">
+
+                    <a class="button-link" href="../JSON/cms_systems.json" target="_blank" rel="noopener">
+                        View JSON Data
+                    </a>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <div class="table-heading-row">
+
+                    <div>
+
+                        <h2>CMS Research Table</h2>
+
+                        <p id="cms-status" role="status" aria-live="polite">
+                            Loading CMS data...
+                        </p>
+
+                    </div>
+
+                    <label class="cms-filter" for="cms-search">
+
+                        Filter Systems
+
+                        <input type="search" id="cms-search" placeholder="Search CMS..." disabled>
+
+                    </label>
+
+                </div>
+
+                <div class="cms-table-wrapper">
+
+                    <table class="cms-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">System</th>
+
+                                <th scope="col">Produced/Sold by / Support</th>
+
+                                <th scope="col">Technology Base</th>
+
+                                <th scope="col">Major Capabilities</th>
+
+                                <th scope="col">Major Limitations</th>
+
+                                <th scope="col">Example Site</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="cms-table-body">
+
+                            <tr>
+
+                                <td colspan="6">Waiting for JSON data...</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <h2>Comparison Summary</h2>
+
+                <p>
+
+                    WordPress, Drupal, and Joomla are traditional general-purpose CMS platforms that can
+                    render full websites directly. Ghost is more specialized around publishing, newsletters,
+                    memberships, and subscriptions. Strapi is different because it is a headless CMS: it
+                    manages and delivers content through APIs while a separate front end displays the content.
+
+                </p>
+
+                <p>
+
+                    The best CMS depends on the project. A site that needs a large plugin ecosystem may favor
+                    WordPress, while complex structured content and editorial workflows can make Drupal a strong
+                    option. Joomla provides a feature-rich traditional CMS with strong multilingual and ACL tools.
+                    Ghost fits publishing-focused organizations, and Strapi fits API-first projects where developers
+                    want complete control over the front end.
+
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>Created by Brendan J. Mejia</p>
+
+            <p>COP4813 Web Application Programming</p>
+
+        </footer>
+
+    </body>
+
+</html>
